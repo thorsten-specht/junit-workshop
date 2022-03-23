@@ -54,7 +54,10 @@ public class Sprint {
         isFinished = finished;
     }
 
-    public void showSprintStatus() {
+    public void printStatus() {
+        System.out.println(" ");
+        System.out.println("####################");
+        System.out.println(" ");
         System.out.println("Stories (total):      " + amountStories);
         System.out.println("Open Stories:         " + openStories);
         System.out.println("Stories in Progress:  " + storiesInProgress);
