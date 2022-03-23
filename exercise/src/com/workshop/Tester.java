@@ -2,7 +2,7 @@ package com.workshop;
 
 public class Tester {
 
-    // we expect that after testing a story it will directly be closed.
+    // A tester grabs one story which will proceed from 'in progress' to 'closed'.
     void testStory(Sprint sprint) {
         if (sprint.storiesInProgress != 0) {
             int storiesInProgress = sprint.getStoriesInProgress();
@@ -20,6 +20,7 @@ public class Tester {
         }
     }
 
+    // A tester grabs multiple stories which will proceed from 'in progress
     void testMultipleStories(Sprint sprint, int count) {
         if (sprint.storiesInProgress >= count) {
             for(int i = 0; i < count; i++) {
