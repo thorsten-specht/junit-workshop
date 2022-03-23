@@ -18,13 +18,13 @@ public class ScrumIteration {
         // Sprintbeginn
         System.out.println("Der Sprint beginnt");
 
-
-
-        /*
-
         // 1. Sprint starten
         Sprint sprintPacman = new Sprint(5);
         sprintPacman.printStatus();
+
+        /*
+
+
 
         // 2. Entwickler erzeugen
         Developer christian = new Developer();
@@ -46,5 +46,8 @@ public class ScrumIteration {
         sprintPacman.printStatus();
 
          */
+
+
+
     }
 }
