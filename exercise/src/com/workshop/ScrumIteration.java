@@ -1,52 +1,26 @@
 package com.workshop;
 
+import com.workshop.events.Sprint;
+import com.workshop.story.Story;
+
 public class ScrumIteration {
 
     public static void main(String[] args) {
-        // Sprint -> Sammlung von Stories. Anzahl der Stories wird am Anfang festgelegt
-        // Sprint -> Entweder "finished" oder "!finished"
-        // Sprint ist dann finished, wenn alle stories "closed"
-
-        // Developer --> Kann eine Story im Status "Open" in Bearbeitung nehmen "in Progress"
-        // Annahme: Wenn eine Story in Progress ist, kann sie direkt getestet werden.
-        // Regel: Ein Entwickler darf immer nur EINE Story bearbeiten.
-
-        // Tester --> Kann eine Story testen, die im Status "in Progress" ist.
-        // Regel: Der Tester kann so viele Stories gleichzeitig testen, wie im Status "In Progress" sind.
-        // Sobald ein Tester eine Story testet, gilt sie als "closed".
-
-        // Sprintbeginn
+        // 1. Sprint begins with 0 Stories and a given amount of points
         System.out.println("Der Sprint beginnt");
+        Sprint firstSprint = new Sprint(20);
 
-        // 1. Sprint starten
-        Sprint sprintPacman = new Sprint(5);
-        sprintPacman.printStatus();
+        // 2. PO puts stories in the sprint until the velocity has been reached.
 
-        /*
+        Story implementSomething = new Story(5, "Implement me");
+
+        System.out.println(implementSomething.getStatus());
 
 
+        Story stories[] = new Story[1];
+        stories[0] = new Story(5, "Test");
 
-        // 2. Entwickler erzeugen
-        Developer christian = new Developer();
-        Developer metje = new Developer();
-        Developer corinna = new Developer();
-        Developer frederik = new Developer();
-        Developer joerk = new Developer();
-
-        frederik.takeStoryInProgress(sprintPacman);
-        metje.takeStoryInProgress(sprintPacman);
-        joerk.takeStoryInProgress(sprintPacman);
-        christian.takeStoryInProgress(sprintPacman);
-        corinna.takeStoryInProgress(sprintPacman);
-
-        // Tester testen die Stories
-        Tester lubos = new Tester();
-        lubos.testMultipleStories(sprintPacman, 5);
-
-        sprintPacman.printStatus();
-
-         */
-
+        System.out.println(stories[0].getPoints());
 
 
     }
