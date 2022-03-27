@@ -80,7 +80,7 @@ public class Sprint {
         isFinished = finished;
     }
 
-    int addStoryToSprint(Story story) {
+    public int addStoryToSprint(Story story) {
         stories.add(story);
         return load = load + stories.size();
     }
