@@ -5,7 +5,7 @@ import com.workshop.story.Story;
 
 public class Engineer {
 
-    void takeStoryInStatus(Story story, Status status) {
+    public void takeStoryInStatus(Story story, Status status) {
         story.setStatus(status);
     }
 }
