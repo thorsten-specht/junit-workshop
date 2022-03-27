@@ -1,9 +1,10 @@
-package com.workshop;
+package com.workshop.team;
 
+import com.workshop.events.Sprint;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DeveloperTest {
+public class DeveloperSpec {
 
     @Test
     void developerHasNoStoryInProgressPerDefault() {
@@ -77,7 +78,4 @@ public class DeveloperTest {
 
         assertEquals(5+alreadyWorkedHours, developer.workSomeHours(5));
     }
-
-
-
 }
