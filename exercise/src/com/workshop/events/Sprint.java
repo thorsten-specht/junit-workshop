@@ -1,16 +1,26 @@
-package com.workshop;
+package com.workshop.events;
+
+import com.workshop.story.Story;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Sprint {
     // attributes
     int amountStories;
     int openStories;
     int storiesInProgress;
+    int velocity;
+    int load;
+    List<Story> stories;
+
     int closedStories;
     boolean isFinished = false;
 
-    public Sprint(int amountStories) {
-        this.amountStories = amountStories;
-        this.openStories = amountStories;
+    public Sprint(int velocity) {
+        this.velocity = velocity;
+        stories = new ArrayList<>();
+        load = 0;
     }
 
     // Getter and Setter
@@ -46,12 +56,29 @@ public class Sprint {
         this.closedStories = closedStories;
     }
 
+    public List<Story> getStories() {
+        return stories;
+    }
+
+    public int getLoad() { return load; }
+
+    public void setLoad(int load) {this.load = load;}
+
+    public int getVelocity() { return load; }
+
+    public void setVelocity(int velocity) {this.velocity = velocity;}
+
     public boolean isFinished() {
         return isFinished;
     }
 
     public void setIsFinished(boolean finished) {
         isFinished = finished;
+    }
+
+    void addStoryInSprint(Story story) {
+        stories.add(story);
+        System.out.println(stories);
     }
 
     public void printStatus() {
