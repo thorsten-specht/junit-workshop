@@ -17,4 +17,20 @@ public class EngineerSpec {
 
         assertEquals(Status.IN_PROGRESS, story.getStatus());
     }
+
+    @Test
+    void workSomeHoursDeveloperTest() {
+        Developer developer = new Developer();
+        int alreadyWorkedHours = developer.workSomeHours(3);
+
+        assertEquals(5+alreadyWorkedHours, developer.workSomeHours(5));
+    }
+
+    @Test
+    void workSomeHoursQaEngineerTest() {
+        QaEngineer qaEngineer = new QaEngineer();
+        int alreadyWorkedHours = qaEngineer.workSomeHours(3);
+
+        assertEquals(6+alreadyWorkedHours, qaEngineer.workSomeHours(6));
+    }
 }

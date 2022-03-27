@@ -3,9 +3,15 @@ package com.workshop.team;
 import com.workshop.events.Sprint;
 
 public class Developer extends Engineer {
+    // attributes
     boolean hasStoryInProgress = false;
-    int workingHoursToday = 0;
 
+
+    // constructor
+    public Developer() {
+    }
+
+    // getter and setter
     public int getWorkingHoursToday() {
         return workingHoursToday;
     }
@@ -16,10 +22,6 @@ public class Developer extends Engineer {
 
     public boolean isHasStoryInProgress() {
         return hasStoryInProgress;
-    }
-
-    int workSomeHours(int hours) {
-        return workingHoursToday = workingHoursToday + hours;
     }
 
 }

@@ -12,12 +12,4 @@ public class DeveloperSpec {
 
         assertFalse(hasStoryInProgress);
     }
-
-    @Test
-    void workSomeHoursTest() {
-        Developer developer = new Developer();
-        int alreadyWorkedHours = developer.workSomeHours(3);
-
-        assertEquals(5+alreadyWorkedHours, developer.workSomeHours(5));
-    }
 }

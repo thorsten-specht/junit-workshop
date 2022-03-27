@@ -1,6 +1,5 @@
 package com.workshop.events;
 
-import com.workshop.story.Status;
 import com.workshop.story.Story;
 import org.junit.jupiter.api.Test;
 import java.util.Collections;

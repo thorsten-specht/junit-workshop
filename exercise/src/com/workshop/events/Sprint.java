@@ -15,16 +15,16 @@ public class Sprint {
     int velocity;
     int load;
     List<Story> stories;
-
     boolean isFinished = false;
 
+    // constructor
     public Sprint(int velocity) {
         this.velocity = velocity;
         stories = new ArrayList<>();
         load = 0;
     }
 
-    // Getter and Setter
+    // Getter and setter
     public int getAmountStories() {
         return amountStories = getStories().size();
     }
@@ -70,16 +70,17 @@ public class Sprint {
 
     public int getVelocity() { return load; }
 
-    public void setVelocity(int velocity) {this.velocity = velocity;}
+    public void setVelocity(int velocity) { this.velocity = velocity; }
 
     public boolean isFinished() {
         return isFinished;
     }
 
-    public void setIsFinished(boolean finished) {
-        isFinished = finished;
+    public void setIsFinished(boolean isFinished) {
+        this.isFinished = isFinished;
     }
 
+    // methods
     public int addStoryToSprint(Story story) {
         stories.add(story);
         return load = load + stories.size();
