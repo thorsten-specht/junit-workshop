@@ -1,35 +1,37 @@
 package com.workshop.events;
 
+import com.workshop.story.Status;
 import com.workshop.story.Story;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.Collections;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SprintSpec {
-    @Test
-    @DisplayName("A sprint always has one more story than provided")
-    void sprintSetupWorks() {
-        Sprint sprint = new Sprint(3);
-
-        int amountStories = sprint.getAmountStories();
-        assertEquals(3, amountStories);
-    }
 
     @Test
-    void addStoryInSprintTest() {
+    void addStoryToSprintTest() {
         Story firstStory = new Story(5, "Test");
         Story secondStory = new Story(5, "Test");
         Sprint sprint = new Sprint(20);
 
         assertEquals(Collections.emptyList(), sprint.getStories());
 
-        sprint.addStoryInSprint(firstStory);
+        sprint.addStoryToSprint(firstStory);
         assertSame(firstStory, sprint.getStories().get(0));
-        sprint.addStoryInSprint(secondStory);
+
+        sprint.addStoryToSprint(secondStory);
         assertEquals(2, sprint.getStories().size());
+    }
+
+    @Test
+    void filterStoriesWorks() {
+        Sprint sprint = new Sprint(5);
+        Story story = new Story(3, "SomeStory");
+
+        sprint.addStoryToSprint(story);
+        System.out.println(
+                sprint.getOpenStories()
+        );
     }
 
 }

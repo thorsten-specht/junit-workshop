@@ -1,20 +1,21 @@
 package com.workshop.events;
 
+import com.workshop.story.Status;
 import com.workshop.story.Story;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Sprint {
     // attributes
     int amountStories;
-    int openStories;
-    int storiesInProgress;
+    long openStories;
+    long storiesInProgress;
+    long closedStories;
     int velocity;
     int load;
     List<Story> stories;
 
-    int closedStories;
     boolean isFinished = false;
 
     public Sprint(int velocity) {
@@ -25,34 +26,37 @@ public class Sprint {
 
     // Getter and Setter
     public int getAmountStories() {
-        return amountStories;
+        return amountStories = getStories().size();
     }
 
     public void setAmountStories(int amountStories) {
         this.amountStories = amountStories;
     }
 
-    public int getOpenStories() {
-        return openStories;
+    public long getOpenStories() {
+        Stream<Story> openStories = stories.stream().filter(story -> story.getStatus().equals(Status.OPEN));
+        return this.openStories = openStories.count();
     }
 
-    public void setOpenStories(int openStories) {
+    public void setOpenStories(long openStories) {
         this.openStories = openStories;
     }
 
-    public int getStoriesInProgress() {
-        return storiesInProgress;
+    public long getStoriesInProgress() {
+        Stream<Story> storiesInProgress = stories.stream().filter(story -> story.getStatus().equals(Status.IN_PROGRESS));
+        return this.storiesInProgress = storiesInProgress.count();
     }
 
-    public void setStoriesInProgress(int storiesInProgress) {
+    public void setStoriesInProgress(long storiesInProgress) {
         this.storiesInProgress = storiesInProgress;
     }
 
-    public int getClosedStories() {
-        return closedStories;
+    public long getClosedStories() {
+        Stream<Story> closedStories = stories.stream().filter(story -> story.getStatus().equals(Status.CLOSED));
+        return this.closedStories = closedStories.count();
     }
 
-    public void setClosedStories(int closedStories) {
+    public void setClosedStories(long closedStories) {
         this.closedStories = closedStories;
     }
 
@@ -76,9 +80,9 @@ public class Sprint {
         isFinished = finished;
     }
 
-    void addStoryInSprint(Story story) {
+    int addStoryToSprint(Story story) {
         stories.add(story);
-        System.out.println(stories);
+        return load = load + stories.size();
     }
 
     public void printStatus() {

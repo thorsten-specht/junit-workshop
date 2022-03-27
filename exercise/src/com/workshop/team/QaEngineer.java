@@ -7,10 +7,10 @@ public class QaEngineer extends Engineer {
     // A tester grabs one story which will proceed from 'in progress' to 'closed'.
     void testStory(Sprint sprint) {
         if (sprint.getStoriesInProgress() != 0) {
-            int storiesInProgress = sprint.getStoriesInProgress();
+            long storiesInProgress = sprint.getStoriesInProgress();
             sprint.setStoriesInProgress(storiesInProgress-1);
 
-            int closedStories = sprint.getClosedStories();
+            long closedStories = sprint.getClosedStories();
             sprint.setClosedStories(closedStories+1);
 
             if (sprint.getClosedStories() == sprint.getAmountStories()) {
