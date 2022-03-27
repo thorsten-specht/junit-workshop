@@ -1,10 +1,12 @@
-package com.workshop;
+package com.workshop.team;
 
-public class Tester {
+import com.workshop.events.Sprint;
+
+public class QaEngineer extends Engineer {
 
     // A tester grabs one story which will proceed from 'in progress' to 'closed'.
     void testStory(Sprint sprint) {
-        if (sprint.storiesInProgress != 0) {
+        if (sprint.getStoriesInProgress() != 0) {
             int storiesInProgress = sprint.getStoriesInProgress();
             sprint.setStoriesInProgress(storiesInProgress-1);
 
@@ -22,7 +24,7 @@ public class Tester {
 
     // A tester grabs multiple stories which will proceed from 'in progress
     void testMultipleStories(Sprint sprint, int count) {
-        if (sprint.storiesInProgress >= count) {
+        if (sprint.getStoriesInProgress() >= count) {
             for(int i = 0; i < count; i++) {
                 testStory(sprint);
             }

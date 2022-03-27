@@ -1,6 +1,8 @@
-package com.workshop;
+package com.workshop.team;
 
-public class Developer {
+import com.workshop.events.Sprint;
+
+public class Developer extends Engineer {
     boolean hasStoryInProgress = false;
     int workingHoursToday = 0;
 
