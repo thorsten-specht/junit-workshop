@@ -12,9 +12,11 @@ public class QaEngineerSpec {
     @Test
     void testStoryTest() {
         Sprint sprint = new Sprint(5);
-        Story story = new Story(5, "Story");
-        story.setStatus(Status.IN_PROGRESS);
         QaEngineer qaEngineer = new QaEngineer();
+        Story story = new Story(5, "Story");
+
+        story.setStatus(Status.IN_PROGRESS);
+        sprint.addStoryToSprint(story);
 
         qaEngineer.testStory(sprint, story);
         assertTrue(sprint.isFinished());
