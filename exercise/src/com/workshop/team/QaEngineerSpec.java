@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class QaEngineerSpec {
 
     @Test
-    void testStoryTest() {
+    void sprintIsFinishedWhenLastStoryWasTested() {
         Sprint sprint = new Sprint(5);
         QaEngineer qaEngineer = new QaEngineer();
         Story story = new Story(5, "Story");

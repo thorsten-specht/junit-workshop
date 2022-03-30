@@ -18,15 +18,4 @@ public class QaEngineer extends Engineer {
             System.out.println("There is nothing to test!");
         }
     }
-
-    // A tester grabs multiple stories which will proceed from 'in progress
-    void testMultipleStories(Sprint sprint, int count) {
-        if (sprint.getStoriesInProgress() >= count) {
-            for(int i = 0; i < count; i++) {
-                //testStory(sprint);
-            }
-        } else {
-            System.out.println("There are less stories in the sprint as you want to test");
-        }
-    }
 }
