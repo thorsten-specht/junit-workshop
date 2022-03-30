@@ -1,7 +1,6 @@
 package com.workshop;
 
 import com.workshop.events.Sprint;
-import com.workshop.story.Status;
 import com.workshop.story.Story;
 import com.workshop.team.Developer;
 import com.workshop.team.ProductOwner;
@@ -13,34 +12,27 @@ public class ScrumIteration {
         // 1. Sprint begins with 0 Stories and a given amount of points
         System.out.println("Der Sprint beginnt");
         Sprint firstSprint = new Sprint(20);
-        Story firstStory = new Story(5, "Some story");
-
-        ProductOwner oli = new ProductOwner();
+        Story firstStory = new Story(5, "Govindas story");
+        Story secondStory = new Story(4, "Fabis Story");
+        Story thirdStory = new Story(3, "Noch eine");
+        ProductOwner stefan = new ProductOwner();
         Developer fabian = new Developer();
+        Developer govinda = new Developer();
         QaEngineer thorsten = new QaEngineer();
 
-        oli.putStoryInSprint(firstStory, firstSprint);
-        fabian.takeStoryInStatus(firstStory, Status.IN_PROGRESS);
+        stefan.putStoryInSprint(firstStory, firstSprint);
+        stefan.putStoryInSprint(secondStory, firstSprint);
+        stefan.putStoryInSprint(thirdStory, firstSprint);
 
+        fabian.takeStoryInProgress(secondStory);
         fabian.workSomeHours(4);
+        fabian.takeStoryInProgress(firstStory);
 
-        System.out.println(
-                firstSprint.getStoriesInProgress()
-        );
+        govinda.takeStoryInProgress(firstStory);
+        thorsten.testStory(firstSprint, firstStory);
+        thorsten.testStory(firstSprint, secondStory);
+        thorsten.testStory(firstSprint, thirdStory);
 
-
-        // 2. PO puts stories in the sprint until the velocity has been reached.
-
-        Story implementSomething = new Story(5, "Implement me");
-
-        System.out.println(implementSomething.getStatus());
-
-
-        Story stories[] = new Story[1];
-        stories[0] = new Story(5, "Test");
-
-        System.out.println(stories[0].getPoints());
-
-
+        firstSprint.printStatus();
     }
 }

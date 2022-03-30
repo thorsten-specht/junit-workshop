@@ -7,7 +7,7 @@ import com.workshop.story.Story;
 public class QaEngineer extends Engineer {
 
     // methods
-    void testStory(Sprint sprint, Story story) {
+    public void testStory(Sprint sprint, Story story) {
         if (sprint.getStoriesInProgress() != 0) {
             takeStoryInStatus(story, Status.CLOSED);
             if (sprint.getClosedStories() == sprint.getAmountStories()) {

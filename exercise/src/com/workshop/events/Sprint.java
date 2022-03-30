@@ -90,11 +90,10 @@ public class Sprint {
         System.out.println(" ");
         System.out.println("####################");
         System.out.println(" ");
-        System.out.println("Stories (total):      " + amountStories);
-        System.out.println("Open Stories:         " + openStories);
-        System.out.println("Stories in Progress:  " + storiesInProgress);
-        System.out.println("Closed Stories:       " + closedStories);
+        System.out.println("Stories (total):      " + getAmountStories());
+        System.out.println("Open Stories:         " + getOpenStories());
+        System.out.println("Stories in Progress:  " + getStoriesInProgress());
+        System.out.println("Closed Stories:       " + getClosedStories());
         System.out.println("Sprint finished:      " + isFinished);
     }
-
 }
